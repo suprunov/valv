@@ -1,3 +1,4 @@
+// Selector.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import {
     Box,
@@ -11,27 +12,7 @@ import {
     FormHelperText,
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
-
-// Поддержка расширенных условий
-function evaluateCondition(condition, values) {
-    const { field } = condition;
-    const currentValue = values?.[field];
-
-    if ('equals' in condition) return currentValue === condition.equals;
-    if ('notEquals' in condition) return currentValue !== condition.notEquals;
-    if ('in' in condition) return Array.isArray(condition.in) && condition.in.includes(currentValue);
-    if ('notIn' in condition) return Array.isArray(condition.notIn) && !condition.notIn.includes(currentValue);
-    if ('gt' in condition) return Number(currentValue) > condition.gt;
-    if ('lt' in condition) return Number(currentValue) < condition.lt;
-    if ('gte' in condition) return Number(currentValue) >= condition.gte;
-    if ('lte' in condition) return Number(currentValue) <= condition.lte;
-
-    return false;
-}
-
-function shouldHide(conditions, values) {
-    return conditions?.some(condition => evaluateCondition(condition, values));
-}
+import { checkConditions } from '../../products/DigitalPrinting/config'; // путь скорректируй, если нужно
 
 export default function Selector({ name, config, editable = false, showResult = false }) {
     const {
@@ -56,8 +37,8 @@ export default function Selector({ name, config, editable = false, showResult = 
     } = useFormContext();
 
     const values = watch();
-    const isInvisible = shouldHide(invisibleIf, values);
-    const isDisabled = shouldHide(disabledIf, values);
+    const isInvisible = checkConditions(invisibleIf, values);
+    const isDisabled = checkConditions(disabledIf, values);
 
     const hasInitialized = useRef(false);
     const selectedLabel = watch(name);
@@ -144,7 +125,9 @@ export default function Selector({ name, config, editable = false, showResult = 
                             onChange={(e) => handleSelectChange(e, field.onChange)}
                         >
                             {groupedOptions.map((group, groupIdx) => {
-                                const visibleOptions = group.options.filter(opt => !shouldHide(opt.invisibleIf, values));
+                                const visibleOptions = group.options.filter(
+                                    (opt) => !checkConditions(opt.invisibleIf || [], values)
+                                );
                                 if (visibleOptions.length === 0) return null;
                                 return [
                                     group.group && (
@@ -156,7 +139,7 @@ export default function Selector({ name, config, editable = false, showResult = 
                                         <MenuItem
                                             key={`${name}-group-${groupIdx}-${opt.label}-${optIdx}`}
                                             value={opt.label}
-                                            disabled={shouldHide(opt.disabledIf, values)}
+                                            disabled={checkConditions(opt.disabledIf || [], values)}
                                         >
                                             {opt.label}
                                         </MenuItem>

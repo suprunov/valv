@@ -26,13 +26,13 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-const PriceCard = ({ title, img, content = {} }) => {
+const PriceCard = ({ title, img, price, content = {} }) => {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
-
+    console.log(price)
     const {
         summary = '',
         sheetsPerKind,

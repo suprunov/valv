@@ -1,0 +1,23 @@
+service,field,label,type,group,option_label,value_key,value
+digital_printing,size,Формат,selector,,Визитка 90x50,width,50
+digital_printing,size,Формат,selector,,Визитка 90x50,height,90
+digital_printing,size,Формат,selector,,Визитка 85x55,width,55
+digital_printing,size,Формат,selector,,Визитка 85x55,height,85
+digital_printing,size,Формат,selector,,A3,width,297
+digital_printing,size,Формат,selector,,A3,height,420
+digital_printing,size,Формат,selector,,A4,width,210
+digital_printing,size,Формат,selector,,A4,height,297
+digital_printing,size,Формат,selector,,A5,width,148
+digital_printing,size,Формат,selector,,A5,height,210
+digital_printing,size,Формат,selector,,A6,width,105
+digital_printing,size,Формат,selector,,A6,height,148
+digital_printing,size,Формат,selector,,A7,width,74
+digital_printing,size,Формат,selector,,A7,height,105
+digital_printing,quantity,Тираж,selector,,50,quantity,50
+digital_printing,quantity,Тираж,selector,,100,quantity,100
+digital_printing,quantity,Тираж,selector,,200,quantity,200
+digital_printing,quantity,Тираж,selector,,300,quantity,300
+digital_printing,quantity,Тираж,selector,,400,quantity,400
+digital_printing,quantity,Тираж,selector,,500,quantity,500
+digital_printing,quantity,Тираж,selector,,1000,quantity,1000
+digital_printing,quantity,Тираж,selector,,2000,quantity,2000

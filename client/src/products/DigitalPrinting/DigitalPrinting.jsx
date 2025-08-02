@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { Box, Container, Paper, Typography, Grid } from "@mui/material";
 import Selector from "../../components/Selector";
-import { params, generateSummary } from "./params";
+import { fields, generateSummary, calculate } from "./config";
 import PriceCard from "../../components/PriceCard";
-import img from "./digitalprint.png";
+import img from "./image.png";
 
 export default function DigitalPrinting() {
     const methods = useForm();
@@ -12,8 +12,8 @@ export default function DigitalPrinting() {
     const previousPrice = useRef({});
     const previousLog = useRef('');
 
-    Object.entries(params.fields).forEach(([name, field]) => {
-        if (field.type === "selector" || field.type === "editable-select") {
+    Object.entries(fields).forEach(([name, field]) => {
+        if (field.type === "selector") {
             field.onChange = (val, helpers) => {
                 const hasValues = field.fields?.every((f) => val?.[f] != null);
                 if (helpers?.setCustomDefaults && hasValues) {
@@ -27,7 +27,7 @@ export default function DigitalPrinting() {
     const formatFormData = (rawData) => {
         const result = {};
 
-        Object.entries(params.fields).forEach(([name, field]) => {
+        Object.entries(fields).forEach(([name, field]) => {
             result[`${name}_label`] = rawData[name] ?? '';
 
             const values = {};
@@ -46,14 +46,14 @@ export default function DigitalPrinting() {
         });
 
         result.summary = generateSummary(result, Object.fromEntries(
-            Object.entries(params.fields).map(([k, v]) => [k, v.label])
+            Object.entries(fields).map(([k, v]) => [k, v.label])
         ));
 
         return result;
     };
 
     const isFormReady = (data) => {
-        return Object.entries(params.fields).every(([name, field]) => {
+        return Object.entries(fields).every(([name, field]) => {
             const label = data[`${name}_label`];
             const value = data[name];
             return label && value !== undefined && value !== '';
@@ -88,11 +88,11 @@ export default function DigitalPrinting() {
                             <Typography variant="h6" sx={{ fontWeight: 600, fontSize: '1.2rem', mb: 2 }}>
                                 Печать
                             </Typography>
-                            <Box sx={{ mb: 3 }}><Selector name="size" editable config={params.fields.size} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="kinds" editable config={params.fields.kinds} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="quantity" editable config={params.fields.quantity} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="color" config={params.fields.color} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="material" config={params.fields.material} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="size" editable config={fields.size} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="kinds" editable config={fields.kinds} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="quantity" editable config={fields.quantity} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="color" config={fields.color} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="material" config={fields.material} /></Box>
                         </Paper>
 
                         <Paper elevation={3} sx={{ p: 2 }}>
@@ -100,22 +100,23 @@ export default function DigitalPrinting() {
                                 Постпечатная обработка
                             </Typography>
 
-                            <Box sx={{ mb: 3 }}><Selector name="lamination1" config={params.fields.lamination1} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="lamination2" config={params.fields.lamination2} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="roundCorners" config={params.fields.roundCorners} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="holePunching" config={params.fields.holePunching} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="creasing" config={params.fields.creasing} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="folding" config={params.fields.folding} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="perforation" config={params.fields.perforation} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="binding" config={params.fields.binding} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="numbering" config={params.fields.numbering} /></Box>
-                            <Box sx={{ mb: 3 }}><Selector name="collation" config={params.fields.collation} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="lamination1" config={fields.lamination1} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="lamination2" config={fields.lamination2} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="roundCorners" config={fields.roundCorners} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="holePunching" config={fields.holePunching} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="creasing" config={fields.creasing} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="folding" config={fields.folding} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="perforation" config={fields.perforation} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="binding" config={fields.binding} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="numbering" config={fields.numbering} /></Box>
+                            <Box sx={{ mb: 3 }}><Selector name="collation" config={fields.collation} /></Box>
                         </Paper>
 
                         <PriceCard
                             title="Цифровая печать"
                             img={img}
                             content={formatFormData(methods.getValues())}
+                            price={calculate(formatFormData(methods.getValues()))}
                         />
                     </Box>
                 </form>

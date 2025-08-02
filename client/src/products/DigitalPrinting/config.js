@@ -1,5 +1,5 @@
-const params = {
-    fields: {
+import price from './price';
+const fields = {
         size: {
             type: "selector",
             label: 'Формат',
@@ -71,25 +71,25 @@ const params = {
             type: "selector",
             label: 'Печать',
             fields: ['color'],
-            fieldLabels: { color: 'Печать' },
+            fieldLabels: {color: 'Печать'},
             layout: 'inline',
             defaultValue: 'С одной стороны',
             description: "Печать с одной или с двух сторон",
             disabledIf: [
-                { field: 'material', equals: "stickerPaperMatte" },
-                { field: 'material', equals: "stickerPaperGlossy" },
-                { field: 'material', equals: "polyLaserWhiteGlossy" },
-                { field: 'material', equals: "polyLaserWhiteMatte" },
-                { field: 'material', equals: "polyLaserTransparentGlossy" },
-                { field: 'material', equals: "polyLaserTransparentMatte" },
+                {field: 'material', equals: "stickerPaperMatte"},
+                {field: 'material', equals: "stickerPaperGlossy"},
+                {field: 'material', equals: "polyLaserWhiteGlossy"},
+                {field: 'material', equals: "polyLaserWhiteMatte"},
+                {field: 'material', equals: "polyLaserTransparentGlossy"},
+                {field: 'material', equals: "polyLaserTransparentMatte"},
             ],
-            invisibleIf: [{ field: 'material', equals: 0 }],
+            invisibleIf: [{field: 'material', equals: 0}],
             groupedOptions: [
                 {
                     options: [
-                        { label: 'С одной стороны', values: { color: 1 } },
-                        { label: 'С двух сторон', values: { color: 2 } },
-                        { label: 'Без печати', values: { color: 0 } },
+                        {label: 'С одной стороны', values: {color: price.digitalPrinting.color.value}},
+                        {label: 'С двух сторон', values: {color: price.digitalPrinting.color.value * 2}},
+                        {label: 'Без печати', values: {color: 0}},
                     ],
                 },
             ],
@@ -106,30 +106,30 @@ const params = {
                 {
                     group: 'Мелованые бумаги',
                     options: [
-                        {label: "Бумага мелованная MaxiSilk, 130г/м²",   values: {material: "maxiSilk130"}},
-                        {label: "Бумага мелованная MaxiSilk, 170г/м²",   values: {material: "maxiSilk170"}},
-                        {label: "Бумага мелованная MaxiSilk, 300г/м²",   values: {material: "maxiSilk300"}},
-                        {label: "Бумага офисная, 80г/м²",      values: {material: "office80"}},
+                        {label: "Бумага мелованная MaxiSilk, 130г/м²", values: {material:   price.digitalPrinting.material.maxiSilk130.value}},
+                        {label: "Бумага мелованная MaxiSilk, 170г/м²", values: {material:   price.digitalPrinting.material.maxiSilk170.value}},
+                        {label: "Бумага мелованная MaxiSilk, 300г/м²", values: {material:   price.digitalPrinting.material.maxiSilk300.value}},
+                        {label: "Бумага офисная, 80г/м²", values: {material:                price.digitalPrinting.material.office80.value}},
                     ],
                 },
                 {
                     group: 'Дизайнерские бумаги',
                     options: [
-                        {label: "Бумага «DNS», 300г/м²",        values: {material: "dns300"}},
-                        {label: "Бумага тисненая «Лён», 280г/м²",        values: {material: "len280"}},
-                        {label: "Бумага Majestic",      values: {material: "majestic"}},
-                        {label: "Бумага TouchCover",    values: {material: "touchCover"}},
+                        {label: "Бумага «DNS», 300г/м²", values: {material:                 price.digitalPrinting.material.dns300.value}},
+                        {label: "Бумага тисненая «Лён», 280г/м²", values: {material:        price.digitalPrinting.material.len280.value}},
+                        {label: "Бумага Majestic", values: {material:                       price.digitalPrinting.material.majestic.value}},
+                        {label: "Бумага TouchCover", values: {material:                     price.digitalPrinting.material.touchCover.value}},
                     ],
                 },
                 {
                     group: 'Самоклейки',
                     options: [
-                        {label: "Бумага самоклеящаяся, матовая",  values: {material: "stickerPaperMatte"}},
-                        {label: "Бумага самоклеящаяся, глянцевая",  values: {material: "stickerPaperGlossy"}},
-                        {label: "Пленка самоклеящаяся, белая глянцевая",  values: {material: "polyLaserWhiteGlossy"}},
-                        {label: "Пленка самоклеящаяся, белая матовая",  values: {material: "polyLaserWhiteMatte"}},
-                        {label: "Пленка самоклеящаяся, прозрачная глянцевая",  values: {material: "polyLaserTransparentGlossy"}},
-                        {label: "Пленка самоклеящаяся, прозрачная матовая",  values: {material: "polyLaserTransparentMatte"}},
+                        {label: "Бумага самоклеящаяся, матовая", values: {material:                 price.digitalPrinting.material.stickerPaperMatte.value}},
+                        {label: "Бумага самоклеящаяся, глянцевая", values: {material:               price.digitalPrinting.material.stickerPaperGlossy.value}},
+                        {label: "Пленка самоклеящаяся, белая глянцевая", values: {material:         price.digitalPrinting.material.polyLaserWhiteGlossy.value}},
+                        {label: "Пленка самоклеящаяся, белая матовая", values: {material:           price.digitalPrinting.material.polyLaserWhiteMatte.value}},
+                        {label: "Пленка самоклеящаяся, прозрачная глянцевая",values: {material:     price.digitalPrinting.material.polyLaserTransparentGlossy.value}},
+                        {label: "Пленка самоклеящаяся, прозрачная матовая",values: {material:       price.digitalPrinting.material.polyLaserTransparentMatte.value}},
                     ],
                 },
             ],
@@ -146,14 +146,14 @@ const params = {
                 {
                     options: [
                         {label: "нет", values: {lamination1: 0}},
-                        {label: "ламинация глянцевая, 32мк"    , values:        {lamination1: "laminationGloss32"}},
-                        {label: "ламинация глянцевая, 75мк"    , values:        {lamination1: "laminationGloss75"}},
-                        {label: "ламинация глянцевая, 125мк"   , values:        {lamination1: "laminationGloss125"}},
-                        {label: "ламинация глянцевая, 200мк"   , values:        {lamination1: "laminationGloss200"}},
-                        {label: "ламинация матовая, 32мк"    , values:          {lamination1: "laminationMatte32"}},
-                        {label: "ламинация матовая, 75мк"    , values:          {lamination1: "laminationMatte75"}},
-                        {label: "ламинация матовая, 125мк"   , values:          {lamination1: "laminationMatte125"}},
-                        {label: "ламинация матовая, 200мк"   , values:          {lamination1: "laminationMatte200"}},
+                        {label: "ламинация глянцевая, 32мк", values: {  lamination1: price.digitalPrinting.lamination.laminationGloss32.value}},
+                        {label: "ламинация глянцевая, 75мк", values: {  lamination1: price.digitalPrinting.lamination.laminationGloss75.value}},
+                        {label: "ламинация глянцевая, 125мк", values: { lamination1: price.digitalPrinting.lamination.laminationGloss125.value}},
+                        {label: "ламинация глянцевая, 200мк", values: { lamination1: price.digitalPrinting.lamination.laminationGloss200.value}},
+                        {label: "ламинация матовая, 32мк", values: {    lamination1: price.digitalPrinting.lamination.laminationMatte32.value}},
+                        {label: "ламинация матовая, 75мк", values: {    lamination1: price.digitalPrinting.lamination.laminationMatte75.value}},
+                        {label: "ламинация матовая, 125мк", values: {   lamination1: price.digitalPrinting.lamination.laminationMatte125.value}},
+                        {label: "ламинация матовая, 200мк", values: {   lamination1: price.digitalPrinting.lamination.laminationMatte200.value}},
                     ],
                 },
             ],
@@ -169,15 +169,15 @@ const params = {
             groupedOptions: [
                 {
                     options: [
-                       {label: "нет", values: {lamination2: 0}},
-                       {label: "ламинация глянцевая, 32мк"    , values:        {lamination2: "laminationGloss32"}},
-                       {label: "ламинация глянцевая, 75мк"    , values:        {lamination2: "laminationGloss75"}},
-                       {label: "ламинация глянцевая, 125мк"   , values:        {lamination2: "laminationGloss125"}},
-                       {label: "ламинация глянцевая, 200мк"   , values:        {lamination2: "laminationGloss200"}},
-                       {label: "ламинация матовая, 32мк"    , values:        {lamination2: "laminationMatte32"}},
-                       {label: "ламинация матовая, 75мк"    , values:        {lamination2: "laminationMatte75"}},
-                       {label: "ламинация матовая, 125мк"   , values:        {lamination2: "laminationMatte125"}},
-                       {label: "ламинация матовая, 200мк"   , values:        {lamination2: "laminationMatte200"}},
+                        {label: "нет", values: {lamination2: 0}},
+                        {label: "ламинация глянцевая, 32мк", values: {lamination2:  price.digitalPrinting.lamination.laminationGloss32.value}},
+                        {label: "ламинация глянцевая, 75мк", values: {lamination2:  price.digitalPrinting.lamination.laminationGloss75.value}},
+                        {label: "ламинация глянцевая, 125мк", values: {lamination2: price.digitalPrinting.lamination.laminationGloss125.value}},
+                        {label: "ламинация глянцевая, 200мк", values: {lamination2: price.digitalPrinting.lamination.laminationGloss200.value}},
+                        {label: "ламинация матовая, 32мк", values: {lamination2:    price.digitalPrinting.lamination.laminationMatte32.value}},
+                        {label: "ламинация матовая, 75мк", values: {lamination2:    price.digitalPrinting.lamination.laminationMatte75.value}},
+                        {label: "ламинация матовая, 125мк", values: {lamination2:   price.digitalPrinting.lamination.laminationMatte125.value}},
+                        {label: "ламинация матовая, 200мк", values: {lamination2:   price.digitalPrinting.lamination.laminationMatte200.value}},
                     ],
                 },
             ],
@@ -194,7 +194,7 @@ const params = {
                 {
                     options: [
                         {label: 'нет', values: {roundCorners: 0}},
-                        {label: 'да',  values: {roundCorners: 1}},
+                        {label: 'да', values: {roundCorners: price.digitalPrinting.roundCorners.value}},
                     ],
                 },
             ],
@@ -210,11 +210,11 @@ const params = {
             groupedOptions: [
                 {
                     options: [
-                        {label: 'нет',  values: {holePunching: 0}},
-                        {label: "1",    values: {holePunching: 1}},
-                        {label: "2",    values: {holePunching: 2}},
-                        {label: "3",    values: {holePunching: 3}},
-                        {label: "4",    values: {holePunching: 4}},
+                        {label: 'нет', values: {holePunching: 0}},
+                        {label: "1", values: {holePunching: price.digitalPrinting.holePunching.value}},
+                        {label: "2", values: {holePunching: price.digitalPrinting.holePunching.value * 2}},
+                        {label: "3", values: {holePunching: price.digitalPrinting.holePunching.value * 3}},
+                        {label: "4", values: {holePunching: price.digitalPrinting.holePunching.value * 4}},
                     ],
                 },
             ],
@@ -230,11 +230,11 @@ const params = {
             groupedOptions: [
                 {
                     options: [
-                        {label: 'нет',  values: {creasing: 0}},
-                        {label: "1",    values: {creasing: 1}},
-                        {label: "2",    values: {creasing: 2}},
-                        {label: "3",    values: {creasing: 3}},
-                        {label: "4",    values: {creasing: 4}},
+                        {label: 'нет', values: {creasing: 0}},
+                        {label: "1", values: {creasing: price.digitalPrinting.creasing.value}},
+                        {label: "2", values: {creasing: price.digitalPrinting.creasing.value * 2}},
+                        {label: "3", values: {creasing: price.digitalPrinting.creasing.value *3}},
+                        {label: "4", values: {creasing: price.digitalPrinting.creasing.value *4}},
                     ],
                 },
             ],
@@ -251,10 +251,10 @@ const params = {
                 {
                     options: [
                         {label: 'нет', values: {folding: 0}},
-                        {label: "1", values: {folding: 1}},
-                        {label: "2", values: {folding: 2}},
-                        {label: "3", values: {folding: 3}},
-                        {label: "4", values: {folding: 4}},
+                        {label: "1", values: {folding: price.digitalPrinting.folding.value}},
+                        {label: "2", values: {folding: price.digitalPrinting.folding.value * 2}},
+                        {label: "3", values: {folding: price.digitalPrinting.folding.value * 3}},
+                        {label: "4", values: {folding: price.digitalPrinting.folding.value * 4}},
                     ],
                 },
             ],
@@ -270,11 +270,11 @@ const params = {
             groupedOptions: [
                 {
                     options: [
-                        {label: 'нет',  values: {perforation: 0}},
-                        {label: "1",    values: {perforation: 1}},
-                        {label: "2",    values: {perforation: 2}},
-                        {label: "3",    values: {perforation: 3}},
-                        {label: "4",    values: {perforation: 4}},
+                        {label: 'нет', values: {perforation: 0}},
+                        {label: "1", values: {perforation: price.digitalPrinting.perforation.value}},
+                        {label: "2", values: {perforation: price.digitalPrinting.perforation.value * 2}},
+                        {label: "3", values: {perforation: price.digitalPrinting.perforation.value * 3}},
+                        {label: "4", values: {perforation: price.digitalPrinting.perforation.value * 4}},
                     ],
                 },
             ],
@@ -291,11 +291,11 @@ const params = {
                 {
                     options: [
                         {label: 'нет', values: {binding: 0}},
-                        {label: "брошюровка на пластиковую пружину", values: {binding: "plastic"}},
-                        {label: "брошюровка на металлическую пружину", values: {binding: "metal"}},
-                        {label: "сшивание нитью", values: {binding: "stitching"}},
-                        {label: "брошюровка на скобу", values: {binding: "staple"}},
-                        {label: "брошюровка на 2 скобы", values: {binding: "staple2"}},
+                        {label: "брошюровка на пластиковую пружину", values:    {binding: price.digitalPrinting.binding.plastic.value}},
+                        {label: "брошюровка на металлическую пружину", values:  {binding: price.digitalPrinting.binding.metal.value}},
+                        {label: "сшивание нитью", values:                       {binding: price.digitalPrinting.binding.stitching.value}},
+                        {label: "брошюровка на скобу", values:                  {binding: price.digitalPrinting.binding.staple.value}},
+                        {label: "брошюровка на 2 скобы", values:                {binding: price.digitalPrinting.binding.staple2.value}},
                     ],
                 },
             ],
@@ -312,8 +312,8 @@ const params = {
                 {
                     options: [
                         {label: 'нет', values: {numbering: 0}},
-                        {label: "в одном месте", values: {numbering: 1}},
-                        {label: "в двух и более местах", values: {numbering: 1.5}},
+                        {label: "в одном месте", values: {numbering: price.digitalPrinting.numbering.value}},
+                        {label: "в двух и более местах", values: {numbering: price.digitalPrinting.numbering.value * 1.5}},
                     ],
                 },
             ],
@@ -330,30 +330,14 @@ const params = {
                 {
                     options: [
                         {label: 'нет', values: {collation: 0}},
-                        {label: "да", values: {collation: 1}},
+                        {label: "да", values: {collation: price.digitalPrinting.collation.value}},
                     ],
                 },
             ],
         },
-    },
-}
+    };
 
-const discounts = [
-    { from: 0, to: 50, value: 0 },
-    { from: 51, to: 100, value: 2 },
-    { from: 101, to: 200, value: 5 },
-    { from: 201, to: 300, value: 10 },
-    { from: 301, to: 400, value: 15 },
-    { from: 401, to: 500, value: 20 },
-    { from: 501, to: 600, value: 25 },
-    { from: 601, to: 700, value: 30 },
-    { from: 701, to: 800, value: 33 },
-    { from: 801, to: 900, value: 36 },
-    { from: 901, to: 1000, value: 40 },
-    { from: 1001, to: 1500, value: 45 },
-    { from: 1501, to: 2000, value: 48 },
-    { from: 2001, to: Number.POSITIVE_INFINITY, value: 50 }
-];
+
 
 // Поддержка условий с операторами сравнения
 const conditionOperators = {
@@ -369,7 +353,7 @@ const conditionOperators = {
 
 function checkConditions(conditions = [], values = {}) {
     return conditions.some(condition => {
-        const { field, ...rest } = condition;
+        const {field, ...rest} = condition;
         const fieldValue = values[field];
         const operator = Object.keys(rest)[0];
         const compareTo = rest[operator];
@@ -408,7 +392,22 @@ function generateSummary(data, labels = {}) {
     return `Цифровая печать — ${parts.join(', ')}`;
 }
 
+const calculate = (data) => {
+    //
+    // const getCountOnSra3(data.size) => {
+    //
+    // }
+
+    return {
+        data: data,
+        price: 50,
+        discount: 10,
+        sheetsPerKind: 5,
+        piecesPerSheet: 10,
+    };
+};
+
 export {
-    params, discounts, checkConditions, generateSummary
+    fields, checkConditions, generateSummary, calculate
 };
 

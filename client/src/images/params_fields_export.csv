@@ -1,0 +1,7 @@
+service,field_key,field_label,type,field_name,field_label_name,option_label,option_value,group
+digital_printing,size,Формат,selector,width,"Ширина, мм",Визитка 90x50,50,
+digital_printing,size,Формат,selector,width,"Ширина, мм",A4,210,
+digital_printing,size,Формат,selector,height,"Высота, мм",Визитка 90x50,90,
+digital_printing,size,Формат,selector,height,"Высота, мм",A4,297,
+digital_printing,quantity,Тираж,selector,quantity,"Тираж, шт",100,100,
+digital_printing,quantity,Тираж,selector,quantity,"Тираж, шт",200,200,
