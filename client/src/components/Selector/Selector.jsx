@@ -12,7 +12,28 @@ import {
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
-export default function EditableSelect({ name, config }) {
+// Поддержка расширенных условий
+function evaluateCondition(condition, values) {
+    const { field } = condition;
+    const currentValue = values?.[field];
+
+    if ('equals' in condition) return currentValue === condition.equals;
+    if ('notEquals' in condition) return currentValue !== condition.notEquals;
+    if ('in' in condition) return Array.isArray(condition.in) && condition.in.includes(currentValue);
+    if ('notIn' in condition) return Array.isArray(condition.notIn) && !condition.notIn.includes(currentValue);
+    if ('gt' in condition) return Number(currentValue) > condition.gt;
+    if ('lt' in condition) return Number(currentValue) < condition.lt;
+    if ('gte' in condition) return Number(currentValue) >= condition.gte;
+    if ('lte' in condition) return Number(currentValue) <= condition.lte;
+
+    return false;
+}
+
+function shouldHide(conditions, values) {
+    return conditions?.some(condition => evaluateCondition(condition, values));
+}
+
+export default function Selector({ name, config, editable = false, showResult = false }) {
     const {
         label = 'Выбор',
         fields = [],
@@ -23,6 +44,8 @@ export default function EditableSelect({ name, config }) {
         defaultValue = '',
         onChange = () => {},
         getPreviousDefaults = null,
+        invisibleIf = [],
+        disabledIf = [],
     } = config;
 
     const {
@@ -31,6 +54,10 @@ export default function EditableSelect({ name, config }) {
         watch,
         formState: { errors },
     } = useFormContext();
+
+    const values = watch();
+    const isInvisible = shouldHide(invisibleIf, values);
+    const isDisabled = shouldHide(disabledIf, values);
 
     const hasInitialized = useRef(false);
     const selectedLabel = watch(name);
@@ -42,7 +69,6 @@ export default function EditableSelect({ name, config }) {
         customFieldValues[field] = watch(`${name}_${field}`) || '';
     });
 
-    // Инициализация defaultValue
     useEffect(() => {
         if (!hasInitialized.current && defaultValue) {
             hasInitialized.current = true;
@@ -100,9 +126,11 @@ export default function EditableSelect({ name, config }) {
         }
     };
 
+    if (isInvisible) return null;
+
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <FormControl fullWidth error={!!errors[name]}>
+            <FormControl fullWidth error={!!errors[name]} disabled={isDisabled} size="small">
                 <InputLabel>{label}</InputLabel>
                 <Controller
                     name={name}
@@ -115,23 +143,34 @@ export default function EditableSelect({ name, config }) {
                             value={selectedLabel || ''}
                             onChange={(e) => handleSelectChange(e, field.onChange)}
                         >
-                            {groupedOptions.map((group) => [
-                                <ListSubheader key={group.group}>{group.group}</ListSubheader>,
-                                ...group.options.map((opt) => (
-                                    <MenuItem key={opt.label} value={opt.label}>
-                                        {opt.label}
-                                    </MenuItem>
-                                )),
-                            ])}
-                            <ListSubheader>Другое</ListSubheader>
-                            <MenuItem value="custom">Свои значения</MenuItem>
+                            {groupedOptions.map((group, groupIdx) => {
+                                const visibleOptions = group.options.filter(opt => !shouldHide(opt.invisibleIf, values));
+                                if (visibleOptions.length === 0) return null;
+                                return [
+                                    group.group && (
+                                        <ListSubheader key={`${name}-group-${groupIdx}`}>
+                                            {group.group}
+                                        </ListSubheader>
+                                    ),
+                                    ...visibleOptions.map((opt, optIdx) => (
+                                        <MenuItem
+                                            key={`${name}-group-${groupIdx}-${opt.label}-${optIdx}`}
+                                            value={opt.label}
+                                            disabled={shouldHide(opt.disabledIf, values)}
+                                        >
+                                            {opt.label}
+                                        </MenuItem>
+                                    )),
+                                ];
+                            })}
+                            {editable && <MenuItem value="custom">Свои значения</MenuItem>}
                         </Select>
                     )}
                 />
                 <FormHelperText>{errors[name]?.message}</FormHelperText>
             </FormControl>
 
-            {isCustom && (
+            {editable && isCustom && (
                 <Box
                     sx={{
                         display: 'flex',
@@ -173,14 +212,16 @@ export default function EditableSelect({ name, config }) {
                 </Box>
             )}
 
-            <Typography variant="body2" sx={{ mt: 1 }}>
-                Выбрано: {selectedLabel}{' '}
-                {fields.map((f) =>
-                    customFieldValues[f]
-                        ? `| ${fieldLabels[f] || f}: ${customFieldValues[f]} `
-                        : ''
-                )}
-            </Typography>
+            {showResult && (
+                <Typography variant="body2" sx={{ mt: 1 }}>
+                    Выбрано: {selectedLabel}{' '}
+                    {fields.map((f) =>
+                        customFieldValues[f]
+                            ? `| ${fieldLabels[f] || f}: ${customFieldValues[f]} `
+                            : ''
+                    )}
+                </Typography>
+            )}
         </Box>
     );
 }

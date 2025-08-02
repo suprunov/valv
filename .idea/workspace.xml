@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1cee53d-57c7-4ec3-9803-3c5ffe60e53c" name="Changes" comment="" />
+    <list default="true" id="c1cee53d-57c7-4ec3-9803-3c5ffe60e53c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/PriceCard/PriceCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/PriceCard/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Selector/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/DigitalPrinting.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/params.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/EditableSelect/EditableSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Selector/Selector.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/EditableSelect/FieldRenderer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/EditableSelect/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/UniversalForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/params-full.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +38,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -30,6 +49,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="30WPhdIpBIrdy69WBlcA9EglA7N" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,7 +60,9 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.client > params.js.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "javascript.nodejs.core.library.configured.version": "20.19.2",
     "javascript.nodejs.core.library.typings.version": "20.19.9",
     "junie.onboarding.icon.badge.shown": "true",
@@ -62,12 +86,17 @@
       <recent name="$PROJECT_DIR$/src/presets/offset/cards" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/products/DigitalPrinting" />
+      <recent name="$PROJECT_DIR$/client/src/products/DigitalPrintig" />
       <recent name="$PROJECT_DIR$/client/src/products" />
       <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$/src/html" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.client &gt; params.js">
+    <configuration name="client &gt; params.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/client/src/products/DigitalPrinting/params.js" working-dir="$PROJECT_DIR$/client/src/products/DigitalPrinting">
+      <method v="2" />
+    </configuration>
     <configuration name="npm dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -78,6 +107,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.client &gt; params.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -100,7 +134,7 @@
       <workItem from="1753745459521" duration="9397000" />
       <workItem from="1753765259403" duration="132000" />
       <workItem from="1753775607266" duration="30000" />
-      <workItem from="1754077571151" duration="26721000" />
+      <workItem from="1754077571151" duration="61908000" />
     </task>
     <servers />
   </component>
