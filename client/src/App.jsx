@@ -9,6 +9,7 @@ import OffsetPrinting from "./products/OffsetPrinting";
 import WideFormatPrinting from "./products/WideFormatPrinting";
 import Signs from "./products/Signs";
 import Stamps from "./products/Stamps";
+import FloatingGif from './components/FloatingGif/FloatingGif';
 
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -47,6 +48,7 @@ export default function BasicTabs() {
     };
 
     return (
+        <>
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
@@ -77,5 +79,7 @@ export default function BasicTabs() {
                 <Stamps />
             </CustomTabPanel>
         </Box>
+    <FloatingGif />
+        </>
     );
 }
