@@ -7,11 +7,8 @@
     <list default="true" id="c1cee53d-57c7-4ec3-9803-3c5ffe60e53c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/PriceCard/PriceCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PriceCard/PriceCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Selector/Selector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Selector/Selector.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/DigitalPrinting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/DigitalPrinting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/price.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/digitalprint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/params.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

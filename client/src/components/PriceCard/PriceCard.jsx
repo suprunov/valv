@@ -2,7 +2,6 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import {
     Card,
-    CardHeader,
     CardMedia,
     CardContent,
     CardActions,
@@ -26,54 +25,76 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-const PriceCard = ({ title, img, price, content = {} }) => {
-    const [expanded, setExpanded] = React.useState(false);
+const formatPrice = (value) =>
+    typeof value === 'number' ? value.toLocaleString('ru-RU') : '—';
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-    console.log(price)
+const PriceCard = ({ title, img, price = {}, content = {} }) => {
+    const [expanded, setExpanded] = React.useState(false);
+    const handleExpandClick = () => setExpanded(!expanded);
+
     const {
-        summary = '',
-        sheetsPerKind,
-        piecesPerSheet,
-        discount,
-    } = content;
+        summary = 'Описание заказа формируется автоматически',
+        totalBasePrice = {},
+        totalPrice = {},
+        totalDiscount = {},
+    } = price;
+
+    const hasDiscount = totalDiscount?.value > 0;
 
     return (
         <Card sx={{ width: '100%', display: 'flex', flexDirection: 'column', height: '100%' }}>
             <Typography variant="h6" sx={{ fontWeight: 600, fontSize: '1.2rem', p: 2 }}>
                 Стоимость
             </Typography>
-            <CardMedia
-                component="img"
-                height="180"
-                image={img}
-                alt={title}
-                sx={{ objectFit: 'cover' }}
-            />
+
+            {img && (
+                <CardMedia
+                    component="img"
+                    height="180"
+                    image={img}
+                    alt={title}
+                    sx={{ objectFit: 'cover' }}
+                />
+            )}
+
             <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant="subtitle2" gutterBottom sx={{ fontWeight: 600 }}>
-                    {summary || 'Описание заказа формируется автоматически'}
+                    {summary}
                 </Typography>
-
-                <Box sx={{ mt: 2 }}>
-                    <Typography variant="body2">
-                        <b>Листов SRA3 на 1 вид:</b> {sheetsPerKind ?? '—'}
-                    </Typography>
-                    <Typography variant="body2">
-                        <b>Экземпляров на листе:</b> {piecesPerSheet ?? '—'}
-                    </Typography>
-                    <Typography variant="body2">
-                        <b>Скидка:</b> {discount ?? 0}%
-                    </Typography>
-                </Box>
 
                 <Divider sx={{ my: 2 }} />
 
-                <Typography variant="h5" color="primary">
-                    Цена: {100} ₽
-                </Typography>
+                <Box sx={{ mb: 2 }}>
+                    {hasDiscount ? (
+                        <>
+                            <Typography
+                                variant="body2"
+                                sx={{ textDecoration: 'line-through', color: 'text.secondary' }}
+                            >
+                                {totalBasePrice.label || 'Базовая стоимость'}: {formatPrice(totalBasePrice.value)} ₽
+                            </Typography>
+                            <Typography
+                                variant="body2"
+                                sx={{ color: 'text.secondary', fontSize: '0.85rem' }}
+                            >
+                                {totalDiscount.label || 'Скидка'}: −{formatPrice(totalDiscount.value)} ₽
+                            </Typography>
+                            <Typography
+                                variant="h5"
+                                sx={{ color: 'error.main', fontWeight: 700 }}
+                            >
+                                {totalPrice.label || 'Стоимость заказа'}: {formatPrice(totalPrice.value)} ₽
+                            </Typography>
+                        </>
+                    ) : (
+                        <Typography
+                            variant="h5"
+                            sx={{ color: 'error.main', fontWeight: 700 }}
+                        >
+                            Стоимость заказа: {formatPrice(totalPrice.value)} ₽
+                        </Typography>
+                    )}
+                </Box>
             </CardContent>
 
             <CardActions disableSpacing>

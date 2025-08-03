@@ -66,7 +66,7 @@ export default function DigitalPrinting() {
 
         if (isFormReady(formatted) && logString !== previousLog.current) {
             previousLog.current = logString;
-            console.log("Данные формы:", formatted);
+            // console.log("Данные формы:", formatted);
         }
     }, [formValues, methods]);
 
