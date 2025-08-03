@@ -73,7 +73,7 @@ export default function Stamps() {
     return (
         <Container maxWidth="xl">
             <Typography variant="h4" gutterBottom>
-                Цифровая печать
+                Печати и штампы
             </Typography>
 
             <FormProvider {...methods}>

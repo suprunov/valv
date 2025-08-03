@@ -73,7 +73,7 @@ export default function OffsetPrinting() {
     return (
         <Container maxWidth="xl">
             <Typography variant="h4" gutterBottom>
-                Цифровая печать
+                Офсетная печать
             </Typography>
 
             <FormProvider {...methods}>

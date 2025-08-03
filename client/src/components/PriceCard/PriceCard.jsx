@@ -50,7 +50,7 @@ const PriceCard = ({ title, img, price = {}, content = {} }) => {
             {img && (
                 <CardMedia
                     component="img"
-                    height="180"
+                    height="220"
                     image={img}
                     alt={title}
                     sx={{ objectFit: 'cover' }}

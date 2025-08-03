@@ -5,37 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1cee53d-57c7-4ec3-9803-3c5ffe60e53c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/OffsetPrinting.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/price.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/Signs.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/price.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/Stamps.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/price.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/Stickers.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/price.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/WideFormatPrinting.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/price.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App1.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/images/params_fields_export.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/images/params_fields_full (1).csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/images/params_fields_full.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/PriceCard/PriceCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PriceCard/PriceCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/images/copycenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/OffsetPrinting/OffsetPrinting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/OffsetPrinting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/OffsetPrinting/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/Signs/Signs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/Signs/Signs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/Stamps/Stamps.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/Stamps/Stamps.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/Stickers/Stickers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/Stickers/Stickers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/WideFormatPrinting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/WideFormatPrinting.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +57,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.client > params.js.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "javascript.nodejs.core.library.configured.version": "20.19.2",
     "javascript.nodejs.core.library.typings.version": "20.19.9",
@@ -90,6 +70,7 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "npm.npm dev.executor": "Run",
+    "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -110,7 +91,7 @@
       <recent name="$PROJECT_DIR$/src/html" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.client &gt; params.js">
+  <component name="RunManager" selected="npm.npm dev">
     <configuration name="client &gt; params.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/client/src/products/DigitalPrinting/params.js" working-dir="$PROJECT_DIR$/client/src/products/DigitalPrinting">
       <method v="2" />
     </configuration>
@@ -152,6 +133,7 @@
       <workItem from="1753765259403" duration="132000" />
       <workItem from="1753775607266" duration="30000" />
       <workItem from="1754077571151" duration="61908000" />
+      <workItem from="1754181439263" duration="2411000" />
     </task>
     <servers />
   </component>

@@ -73,7 +73,7 @@ export default function Signs() {
     return (
         <Container maxWidth="xl">
             <Typography variant="h4" gutterBottom>
-                Цифровая печать
+                Таблички
             </Typography>
 
             <FormProvider {...methods}>

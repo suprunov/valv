@@ -73,7 +73,7 @@ export default function WideFormatPrinting() {
     return (
         <Container maxWidth="xl">
             <Typography variant="h4" gutterBottom>
-                Цифровая печать
+                Широкоформатная печать
             </Typography>
 
             <FormProvider {...methods}>
