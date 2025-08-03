@@ -4,6 +4,11 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import DigitalPrinting from "./products/DigitalPrinting";
+import Stickers from "./products/Stickers";
+import OffsetPrinting from "./products/OffsetPrinting";
+import WideFormatPrinting from "./products/WideFormatPrinting";
+import Signs from "./products/Signs";
+import Stamps from "./products/Stamps";
 
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -57,19 +62,19 @@ export default function BasicTabs() {
                 <DigitalPrinting />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-                Офсетная печать
+                <OffsetPrinting />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-                Широкоформатная печать
+                <WideFormatPrinting />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
-                Наклейки
+                <Stickers />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
-                Таблички
+                <Signs />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
-                Печати и штампы
+                <Stamps />
             </CustomTabPanel>
         </Box>
     );

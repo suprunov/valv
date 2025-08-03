@@ -5,10 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1cee53d-57c7-4ec3-9803-3c5ffe60e53c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/OffsetPrinting.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/OffsetPrinting/price.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/Signs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Signs/price.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/Stamps.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stamps/price.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/Stickers.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/Stickers/price.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/WideFormatPrinting.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/products/WideFormatPrinting/price.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/PriceCard/PriceCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PriceCard/PriceCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/DigitalPrinting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/DigitalPrinting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/products/DigitalPrinting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/products/DigitalPrinting/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App1.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/images/params_fields_export.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/images/params_fields_full (1).csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/images/params_fields_full.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,34 +72,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.client &gt; params.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.19.2&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.19.9&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/private/var/www/calc/client/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.npm dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.client > params.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "20.19.2",
+    "javascript.nodejs.core.library.typings.version": "20.19.9",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/private/var/www/calc/client/src/products/Stamps",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.npm dev.executor": "Run",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src" />
-      <recent name="$PROJECT_DIR$/server/data" />
-      <recent name="$USER_HOME$/Desktop" />
-      <recent name="$PROJECT_DIR$/src/presets/offset/cards" />
+      <recent name="$PROJECT_DIR$/client/src/products/Stamps" />
+      <recent name="$PROJECT_DIR$/client/src/products" />
+      <recent name="$PROJECT_DIR$/client/src/products/Signs" />
+      <recent name="$PROJECT_DIR$/client/src/products/WideFormatPrinting" />
+      <recent name="$PROJECT_DIR$/client/src/products/OffsetPrinting" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/products/DigitalPrinting" />
